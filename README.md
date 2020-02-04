@@ -24,5 +24,19 @@ You just need to make sure you have [Ruby](https://www.ruby-lang.org/en/) instal
 + Once there is any available Stamp 1G, you should hear some **bi bi bi** noise on your computer.
 + Once we get any slots we still need to do some manual work to pass the Google Verification code.
 
-### ToDo
-- [ ] Auto form filling
+### For Email support-
+If you are using 2 Factor Authentication
+
+You need to create an app specific password for your application. Follow these steps:
+
++ Go to gmail
++ in the top right corner click on your profile icon and select 'My Account'
++ Click on 'Sign in & Security'
++ Scroll down the 'Sign in & Security' page a bit and there is a section called 'App Passwords' Click on that.
++ You should see a dropdown labelled 'Select App'. Select Mail.
++ For the 'on my device' dropdown select 'Other' and type in commandline or whatever you want to call the app.
+
+Click 'Generate'. A password will be generated. Copy that password and replace the password you were using in your options hash with the generated password:
+    options = { :address => "smtp.gmail.com", :port => 587, :user_name => '', :password => '', :authentication => 'plain', :enable_starttls_auto => true }
+
+Also make sure your username is your full gmail email address.
