@@ -32,8 +32,9 @@ while true
 	http.use_ssl = true
 	http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 	res = http.get(uri.request_uri)
-	print "\a" if JSON.parse(res.body)["empty"] != "TRUE"
-	if JSON.parse(res.body)["empty"] != "TRUE"	
+	#print "\a" if JSON.parse(res.body)["empty"] != "TRUE"
+	if JSON.parse(res.body)["empty"] != "TRUE"
+		print "\a"	
 		Mail.deliver do
 			to 'sendto@gmail.com'
 			from 'frommy@gmail.com'
